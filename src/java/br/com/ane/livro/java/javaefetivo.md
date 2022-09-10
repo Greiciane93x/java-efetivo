@@ -8,6 +8,17 @@ Se os parâmetros de um construtor não descrevem o objeto que está sendo retor
 método static factory  com um nome bem escolhido. Facilita na legibilidade. 
 
 
+Uma outra facilidade dos métodos static factory é que, ao contrário dos construtores, 
+não precisam criar um novo objeto sempre que invocados. Isso permite que as classes 
+imutáveis utilizem as instâncias pré-construídas ou armazenem em caches as instâncias, 
+conforme são construídas, e as utilizem repetidas vezes a fim de evitar a criação de objetos 
+duplicados desnecessários. Essa técnica melhora significantemente o desempenho caso os objetos 
+equivalentes sejam requisitados com frequência, principalmente se a criação deles for custosa. 
+
+A capacidade dos métodos static factory de retornar o mesmo objeto a partir de chamadas repetidas 
+possibilita às classes assegurarem o controle rigoroso sobre as instâncias existentes a todo momento. 
+As classes que se comportam desse modo são denominadas de classes controladoras de instância 
+
 <h1>Item 2 - Cogite o uso de um builder quando se deparar com muitos parâmetros no construtor. </h1> 
 
 Padrão telescoping constructor não é escalável
